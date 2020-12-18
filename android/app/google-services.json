@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1051426349352",
+    "firebase_url": "https://reconnect-394be.firebaseio.com",
+    "project_id": "reconnect-394be",
+    "storage_bucket": "reconnect-394be.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1051426349352:android:42538b0db931fd3488301d",
+        "android_client_info": {
+          "package_name": "com.crankyvein.reconnect"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1051426349352-d8f0q2v9s40r9fsrg54qq3p0q5sh39p1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYyJLiveomn7ZHuentCMASLoS-tiIYPao"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1051426349352-d8f0q2v9s40r9fsrg54qq3p0q5sh39p1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
