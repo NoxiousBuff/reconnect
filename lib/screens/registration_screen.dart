@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:reconnect/components/rounded_button.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:reconnect/screens/chat_room.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
+import 'package:reconnect/services/auth.dart';
 import 'package:reconnect/services/database.dart';
+import 'package:provider/provider.dart';
 
 class RegistrationScreen extends StatefulWidget {
   @override
@@ -17,7 +18,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   String password;
   bool showSpinner = false;
   DatabaseMethods databaseMethods = DatabaseMethods();
-  final _auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -93,8 +93,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     'email': email,
                   };
                   databaseMethods.uploadUserInfo(userInfoMap);
-                  final user = await _auth.createUserWithEmailAndPassword(
-                      email: email, password: password);
+                  final user = context
+                      .read<Authentication>()
+                      .signUp(userName: name, email: email, password: password);
+
                   if (user != null) {
                     Navigator.push(context,
                         CupertinoPageRoute(builder: (context) {
